@@ -1,0 +1,10 @@
+* {
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  line-height: 1.8rem;
+}
+.app {
+    max-width: 100vh;
+    width: 100%;
+    display: flex;
+}
