@@ -1,0 +1,33 @@
+.k_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.k_table thead tr {
+  background-color: #212121;
+  color: #ffffff;
+  text-align: left;
+}
+.k_table th,
+td {
+  padding: 12px 15px;
+  text-align: center;
+}
+.k_table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.k_table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.k_table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.k_table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}

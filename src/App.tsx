@@ -1,25 +1,17 @@
-import React from "react";
+import React, { Suspense } from "react";
+import { useRoutes } from "react-router-dom";
+import Loader from "./components/Loaded";
+import { useRoleContext } from "./context/rootContext";
 
 // file css
 import "./resource/css/base.css";
-//import components
-import Footer from "./views/layout/Footer";
-import Header from "./views/layout/Header";
-import SideBar from "./views/layout/SideBar";
-import Customer from "./views/pages/customer";
+import { getRoutes } from "./routes";
 
 function App() {
-  return (
-    <div className="app">
-      <div>
-        <SideBar />
-      </div>
-      <div>
-        <Header />
-        <Customer />
-      </div>
-    </div>
-  );
+  const { role } = useRoleContext();
+  const routes = getRoutes(role);
+  const router = useRoutes(routes);
+  return <Suspense fallback={<Loader text="page" />}>{router}</Suspense>;
 }
 
 export default App;

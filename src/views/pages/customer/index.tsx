@@ -4,7 +4,6 @@ import InputSearch from '../../../components/inputSearch'
 import ButtonFilter from '../../../components/buttonFilter'
 import DataTable from './CustomerList'
 
-
 const Customer = () => {
   const AddBtn = styled(Button)({
     border: "1px solid #ddd",
@@ -25,4 +24,4 @@ const Customer = () => {
   )
 }
 
-export default Customer
+export default Customer;
