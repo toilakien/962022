@@ -14,7 +14,7 @@ const Logo = () => {
   return (
     <LogoWrapper>
         <Avatar sx={{width:"80px",height:"60px",ml:1}} alt='logo' src={image}/>
-        <MoreVertIcon sx={{color:"#fff",cursor:"pointer"}}/>
+        <MoreVertIcon  sx={{color:"#fff",cursor:"pointer"}}/>
     </LogoWrapper>
   )
 }

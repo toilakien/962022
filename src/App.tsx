@@ -1,17 +1,20 @@
-import React, { Suspense } from "react";
-import { useRoutes } from "react-router-dom";
-import Loader from "./components/Loaded";
-import { useRoleContext } from "./context/rootContext";
-
+import React from "react";
+import Route from "./routes";
 // file css
 import "./resource/css/base.css";
-import { getRoutes } from "./routes";
+import Container from '@mui/material/Container'
+import JWTcontext from "./context/JWTcontext";
+
 
 function App() {
-  const { role } = useRoleContext();
-  const routes = getRoutes(role);
-  const router = useRoutes(routes);
-  return <Suspense fallback={<Loader text="page" />}>{router}</Suspense>;
+  return (
+    <JWTcontext>
+
+      <Route />
+    </JWTcontext>
+  )
+
 }
+
 
 export default App;

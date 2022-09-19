@@ -5,6 +5,9 @@ import ButtonFilter from '../../../components/buttonFilter'
 import DataTable from './CustomerList'
 
 const Customer = () => {
+
+  console.log(1111);
+  
   const AddBtn = styled(Button)({
     border: "1px solid #ddd",
     height: "35px",
