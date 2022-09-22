@@ -3,36 +3,31 @@
   width: 800px;
   display: flex;
   align-items: center;
-  }
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
 
 .input-search img {
-    position: relative;
-    left: 35px;
-    width: 23px;
-    height: 23px;
-
+  position: relative;
+  left: 10px;
+  width: 23px;
+  height: 23px;
 }
 .input-search input {
-  /* position: relative; */
-  /* margin-left: 20px; */
+  margin-left: 20px;
   width: 100%;
   height: 100%;
   outline: none;
-  border: 1px solid #ddd;
+  border: none;
   border-radius: 5px;
 }
-.input-search input:focus{
-  border: 1px solid #1565c0;
-}
-.input-search input::-webkit-progress-value{
-  margin-left: 50px;
-}
-.input-search input::placeholder {
-  
+
+.input-search ::placeholder {
   color: #ddd;
   font-size: 0.8rem;
-  padding-left: 40px;
-  
+  padding-left: 0px;
 }
-
-
+.boder {
+  border: 1px solid blue;
+}
