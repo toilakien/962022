@@ -13,6 +13,9 @@
     background-color: rgb(233, 233, 233);
     transition: background-color 1s;
 }
+.button-filter:focus{
+    border: 1px solid rgb(68, 68, 146);
+}
 .button-filter span{
     color: #111;
     font-weight: 100;

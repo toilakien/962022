@@ -27,13 +27,11 @@ export const customerSlice = createSlice({
   },
 });
 export default customerSlice.reducer;
-export async function getAllList() {
-  const resp = await customerApi.success.data;
-  try {
-    if (resp) {
-      dispatch(customerSlice.actions.getAllListSuccess(resp));
-    }
-  } catch (error) {
-    console.log(error);
-  }
+export function getAllList() {
+  return async () => {
+    const resp = await customerApi.success.data;
+    console.log(resp);
+
+    dispatch(customerSlice.actions.getAllListSuccess(resp));
+  };
 }

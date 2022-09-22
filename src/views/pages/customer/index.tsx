@@ -14,10 +14,12 @@ const Customer = () => {
     height: "35px",
     color: "#111",
   })
-
-  useEffect(() => {
-    //  getAllList();  
-  }, [])
+  // const getList = async () => {
+  //   await dispatch(getAllList());
+  // };
+  // useEffect(() => {
+  //   getList();
+  // }, [])
   return (
     <Container sx={{ mt: 5, backgroundColor: "#eceff1", p: 5 }}>
       <Grid sx={{ display: "flex" }}>

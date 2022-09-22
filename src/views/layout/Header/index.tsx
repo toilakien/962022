@@ -4,7 +4,8 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import PersonIcon from '@mui/icons-material/Person'; 
+import PersonIcon from '@mui/icons-material/Person';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const HeaderWrapper = styled(Grid)({
@@ -13,7 +14,7 @@ const Header = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottom:"1px solid #111"
+    borderBottom: "1px solid #111"
   });
   const MenuWrapper = styled(Grid)({
     display: "flex",
@@ -29,25 +30,27 @@ const Header = () => {
   });
   return (
     <HeaderWrapper>
-      <Typography variant="h6" sx={{ml:2 }}>Tổng quan</Typography>
+      <Typography variant="h6" sx={{ ml: 2 }}>Tổng quan</Typography>
       <MenuWrapper>
         <ListItem>
-          <AttachMoneyIcon sx={{color:"#ddd"}}/>
+          <AttachMoneyIcon sx={{ color: "#ddd" }} />
           <Typography sx={{ pr: 2 }}>Vay vốn kinh doanh </Typography>
         </ListItem>
         <ListItem>
-          <QuestionMarkIcon  sx={{color:"#ddd"}}/>
+          <QuestionMarkIcon sx={{ color: "#ddd" }} />
           <Typography sx={{ pr: 2 }}>Trợ giúp</Typography>
         </ListItem>
         <ListItem>
-          <FavoriteIcon sx={{color:"#ddd"}} />
+          <FavoriteIcon sx={{ color: "#ddd" }} />
           <Typography sx={{ pr: 2 }}>Góp ý </Typography>
         </ListItem>
-        <ListItem>
-          <PersonIcon  sx={{color:"red"}}/>
-          <Typography sx={{ pr: 2 }}>Kiên Lê </Typography>
-          <KeyboardArrowDownIcon/>
-        </ListItem>
+        <Link to="/profile">
+          <ListItem>
+            <PersonIcon sx={{ color: "red" }} />
+            <Typography sx={{ pr: 2 }}>Kiên Lê </Typography>
+            <KeyboardArrowDownIcon />
+          </ListItem>
+        </Link>
       </MenuWrapper>
     </HeaderWrapper>
   );

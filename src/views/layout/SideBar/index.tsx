@@ -80,7 +80,7 @@ const SideBar = () => {
             <SideBarContent>
                 {TypoArr.map((e, index) => {
                     return (
-                        <Link style={{textDecoration:"none"}} to={e.type}>
+                        <Link key={index} style={{textDecoration:"none"}} to={e.type}>
                             <ListItem
                                 key={index}
                                 onClick={() => {
