@@ -13,7 +13,7 @@ const Header = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottom:"1px solid #ddd"
+    borderBottom:"1px solid #111"
   });
   const MenuWrapper = styled(Grid)({
     display: "flex",

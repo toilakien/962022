@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Container, Grid, styled } from '@mui/material'
 import InputSearch from '../../../components/inputSearch'
 import ButtonFilter from '../../../components/buttonFilter'
 import DataTable from './CustomerList'
+import { getAllList } from '../../../redux/slice/customer'
+import { dispatch, useSelector } from '../../../redux/store'
 
 const Customer = () => {
 
-  console.log(1111);
-  
+  const customerApi = useSelector(state => state?.customer?.customer);
   const AddBtn = styled(Button)({
     border: "1px solid #ddd",
     height: "35px",
     color: "#111",
   })
+
+  useEffect(() => {
+    //  getAllList();  
+  }, [])
   return (
     <Container sx={{ mt: 5, backgroundColor: "#eceff1", p: 5 }}>
       <Grid sx={{ display: "flex" }}>
@@ -21,10 +26,11 @@ const Customer = () => {
         <AddBtn variant='outlined'>Thêm khách hàng</AddBtn>
       </Grid>
       <Grid sx={{ mt: 5 }}>
-        <DataTable />
+        <DataTable customerApi={customerApi} />
       </Grid>
     </Container>
   )
 }
 
 export default Customer;
+

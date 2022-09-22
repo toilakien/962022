@@ -1,5 +1,5 @@
 import '../../../resource/css/table.css';
-export default function DataTable() {
+export default function DataTable(props:any) {
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'name', headerName: 'Name', width: 160 },
@@ -10,14 +10,10 @@ export default function DataTable() {
         },
         { field: 'createdAt', headerName: 'CreatedAt', width: 170 },
         { field: 'creationAt', headerName: 'CreationAt', width: 170 },
-
-    ];
-    const rows = [
-        { id: 1, name: 'Jon', status: true, createdAt: '17/10/2001', creationAt: '7/12/2001' },
-        { id: 2, name: 'Cersei', status: true, createdAt: '17/10/2001', creationAt: '7/12/2001' },
-        { id: 3, name: 'Jaime', status: true, createdAt: '17/10/2001', creationAt: '7/12/2001' },
-        { id: 4, name: 'Arya', status: true, createdAt: '17/10/2001', creationAt: '7/12/2001' },
-    ];
+        { field: 'tools', headerName: 'Tools', width: 170 },
+    ]
+    
+    
     return (
         <table className='k_table'>
             {/* render header */}
@@ -32,14 +28,18 @@ export default function DataTable() {
             </thead>
             <tbody>
                 {/* {render content} */}
-                {rows.map((row: any, index: any) => {
+                {props?.success?.data.map((row: any, index: any) => {
                     return (
                         <tr key={index}>
                             <td>{row.id}</td>
                             <td>{row.name}</td>
                             <td>{row.status ? "Active" : "Noactive"} </td>
-                            <td>{row.createdAt}</td>
-                            <td>{row.creationAt} </td>
+                            <td>{row.create_at}</td>
+                            <td>{row.update_at} </td>
+                            <td>
+                                <button>Sửa</button>
+                                <button>Xóa</button>
+                            </td>
                         </tr>
                     )
                 })}
