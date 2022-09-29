@@ -7,6 +7,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const SideBar = () => {
     const SideBarWrapper = styled(Grid)({
         width: "250px",
@@ -73,6 +74,7 @@ const SideBar = () => {
     };
     const handleClick = (e: any) => {
         e = true;
+
     };
     return (
         <SideBarWrapper>
@@ -80,7 +82,7 @@ const SideBar = () => {
             <SideBarContent>
                 {TypoArr.map((e, index) => {
                     return (
-                        <Link key={index} style={{textDecoration:"none"}} to={e.type}>
+                        <Link key={index} style={{ textDecoration: "none" }} to={e.type}>
                             <ListItem
                                 key={index}
                                 onClick={() => {

@@ -1,49 +1,69 @@
+import { Button } from '@mui/material';
+import Table from '../../../components/table';
 import '../../../resource/css/table.css';
-export default function DataTable(props:any) {
-    const columns = [
-        { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'name', headerName: 'Name', width: 160 },
+export default function DataTable({ customerApi }: { customerApi: any }) {
+
+    const columns = ["STT", "Name", "Code", "Status", "Create_at", "Update_at", "Tools"];
+    const rows = [
         {
-            field: 'status',
-            headerName: 'status',
-            width: 250,
+            name: "DIVISION 1",
+            code: "No code",
+            status: true,
+            create_at: "7/9/2001",
+            update_at: "10/9/2001"
         },
-        { field: 'createdAt', headerName: 'CreatedAt', width: 170 },
-        { field: 'creationAt', headerName: 'CreationAt', width: 170 },
-        { field: 'tools', headerName: 'Tools', width: 170 },
-    ]
-    
-    
+        {
+            name: "DIVISION 1",
+            code: "No code",
+            status: true,
+            create_at: "7/9/2001",
+            update_at: "10/9/2001"
+        },
+        {
+            name: "DIVISION 1",
+            code: "No code",
+            status: true,
+            create_at: "7/9/2001",
+            update_at: "10/9/2001"
+        },
+        {
+            name: "DIVISION 1",
+            code: "No code",
+            status: true,
+            create_at: "7/9/2001",
+            update_at: "10/9/2001"
+        },
+        {
+            name: "DIVISION 1",
+            code: "No code",
+            status: true,
+            create_at: "7/9/2001",
+            update_at: "10/9/2001"
+        },
+        {
+            name: "DIVISION 2",
+            code: "code",
+            status: true,
+            create_at: "7/9/2001",
+            update_at: "10/9/2001"
+        },
+        {
+            name: "DIVISION 1",
+            code: "No code",
+            status: true,
+            create_at: "7/9/2001",
+            update_at: "10/9/2001"
+        },
+        {
+            name: "DIVISION 1",
+            code: "No code",
+            status: true,
+            create_at: "7/9/2001",
+            update_at: "10/9/2001"
+        }
+    ];
+
     return (
-        <table className='k_table'>
-            {/* render header */}
-            <thead >
-                <tr>
-                    {columns.map((colum: any, index: any) => {
-                        return (
-                            <th key={index}>{colum.headerName}</th>
-                        )
-                    })}
-                </tr>
-            </thead>
-            <tbody>
-                {/* {render content} */}
-                {props?.success?.data.map((row: any, index: any) => {
-                    return (
-                        <tr key={index}>
-                            <td>{row.id}</td>
-                            <td>{row.name}</td>
-                            <td>{row.status ? "Active" : "Noactive"} </td>
-                            <td>{row.create_at}</td>
-                            <td>{row.update_at} </td>
-                            <td>
-                                <button>Sửa</button>
-                                <button>Xóa</button>
-                            </td>
-                        </tr>
-                    )
-                })}
-            </tbody>
-        </table>
+        <Table columns={columns}rows={rows} />
     )
 }

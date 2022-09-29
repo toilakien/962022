@@ -1,0 +1,41 @@
+.table-wrapper {
+  background-color: #ffff;
+  border-collapse: collapse;
+  width: 100%;
+  
+  th {
+    color: 111;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  td {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+    font-weight: lighter;
+    button {
+      background-color: #ffff;
+      border: 1px solid blue;
+      border-radius: 5px;
+      margin-left: 10px;
+      width: 80px;
+      cursor: pointer;
+      transition: all 3s;
+      &:hover {
+        background-color: rgb(219, 230, 245);
+      }
+      &:active {
+        background-color: rgb(14, 73, 155);
+        border: 1px solid rgb(37, 37, 184);
+      }
+    }
+  }
+  tbody {
+    tr {
+      &:hover {
+        background-color: rgb(247, 255, 255);
+      }
+    }
+  }
+}

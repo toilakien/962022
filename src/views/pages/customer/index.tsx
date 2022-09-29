@@ -6,10 +6,11 @@ import DataTable from './CustomerList'
 import { getAllList } from '../../../redux/slice/customer'
 import { dispatch, useSelector } from '../../../redux/store'
 import AddCustomer from './AddCustomer'
+import { customerApi } from '../../../fakeApi/apiCustomer'
 
 const Customer = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const customerApi = useSelector(state => state?.customer?.customer);
+  // const customerApi = useSelector(state => state?.customer?.customer);
   const AddBtn = styled(Button)({
     border: "1px solid #ddd",
     height: "35px",
