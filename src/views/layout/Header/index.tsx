@@ -6,6 +6,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import PersonIcon from '@mui/icons-material/Person';
 import { Link } from "react-router-dom";
+import { useStyles } from "../../../styles/globalSlyles";
 
 const Header = () => {
   const HeaderWrapper = styled(Grid)({
@@ -28,26 +29,27 @@ const Header = () => {
       backgroundColor: "#e1f5fe",
     },
   });
+  const classes = useStyles();
   return (
-    <HeaderWrapper>
+    <HeaderWrapper container>
       <Typography variant="h6" sx={{ ml: 2 }}>Tổng quan</Typography>
       <MenuWrapper>
         <ListItem>
           <AttachMoneyIcon sx={{ color: "#ddd" }} />
-          <Typography sx={{ pr: 2 }}>Vay vốn kinh doanh </Typography>
+          <Typography className={classes.typography}>Vay vốn kinh doanh </Typography>
         </ListItem>
         <ListItem>
           <QuestionMarkIcon sx={{ color: "#ddd" }} />
-          <Typography sx={{ pr: 2 }}>Trợ giúp</Typography>
+          <Typography className={classes.typography}>Trợ giúp</Typography>
         </ListItem>
         <ListItem>
           <FavoriteIcon sx={{ color: "#ddd" }} />
-          <Typography sx={{ pr: 2 }}>Góp ý </Typography>
+          <Typography className={classes.typography}>Góp ý </Typography>
         </ListItem>
-        <Link to="/profile">
+        <Link style={{ textDecoration: "none" }} to="/profile">
           <ListItem>
             <PersonIcon sx={{ color: "red" }} />
-            <Typography sx={{ pr: 2 }}>Kiên Lê </Typography>
+            <Typography className={classes.typography}>Kiên Lê </Typography>
             <KeyboardArrowDownIcon />
           </ListItem>
         </Link>

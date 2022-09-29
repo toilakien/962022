@@ -9,7 +9,8 @@ const Logo = () => {
         display:"flex",
         alignItems:"center",
         justifyContent:"space-between",
-        maxWidth:"100%"
+        maxWidth:"100%",
+        borderBottom:"1px solid #fafafa"
     })
   return (
     <LogoWrapper>
@@ -19,4 +20,4 @@ const Logo = () => {
   )
 }
 
-export default Logo
+export default Logo;

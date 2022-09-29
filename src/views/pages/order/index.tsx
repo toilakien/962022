@@ -1,87 +1,87 @@
-import React from 'react'
-import Container from '@mui/material/Container'
-import Table from '../../../components/table'
-import { Button, Grid, styled } from '@mui/material';
-import ButtonFilter from '../../../components/buttonFilter';
-import InputSearch from '../../../components/inputSearch';
+import React from 'react';
+import { Autocomplete, Button, Grid, TextField, Typography } from '@mui/material'
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { useStyles } from '../../../styles/globalSlyles'
+
 
 const Order = () => {
-    const columns = ["STT", "Name", "Code", "Status", "Create_at", "Update_at", "Tools"];
-    const rows = [
+    const classes = useStyles();
+    const columns: GridColDef[] = [
+        { field: 'id', headerName: 'ID', width: 70 },
+        { field: 'firstName', headerName: 'First name', width: 130 },
+        { field: 'lastName', headerName: 'Last name', width: 130 },
         {
-            name: "DIVISION 1",
-            code: "No code",
-            status: true,
-            create_at: "7/9/2001",
-            update_at: "10/9/2001"
+            field: 'age',
+            headerName: 'Age',
+            type: 'number',
+            width: 90,
         },
         {
-            name: "DIVISION 1",
-            code: "No code",
-            status: true,
-            create_at: "7/9/2001",
-            update_at: "10/9/2001"
-        },
-        {
-            name: "DIVISION 1",
-            code: "No code",
-            status: true,
-            create_at: "7/9/2001",
-            update_at: "10/9/2001"
-        },
-        {
-            name: "DIVISION 1",
-            code: "No code",
-            status: true,
-            create_at: "7/9/2001",
-            update_at: "10/9/2001"
-        },
-        {
-            name: "DIVISION 1",
-            code: "No code",
-            status: true,
-            create_at: "7/9/2001",
-            update_at: "10/9/2001"
-        },
-        {
-            name: "DIVISION 2",
-            code: "code",
-            status: true,
-            create_at: "7/9/2001",
-            update_at: "10/9/2001"
-        },
-        {
-            name: "DIVISION 1",
-            code: "No code",
-            status: true,
-            create_at: "7/9/2001",
-            update_at: "10/9/2001"
-        },
-        {
-            name: "DIVISION 1",
-            code: "No code",
-            status: true,
-            create_at: "7/9/2001",
-            update_at: "10/9/2001"
-        }
-    ];
-    const AddBtn = styled(Button)({
-        border: "1px solid #ddd",
-        height: "35px",
-        color: "#111",
-    })
-    return (
-        <Container sx={{ backgroundColor: "#f5f5f5", p: 5, mt: 2 }}>
-            <Grid sx={{ display: "flex" }}>
-                <InputSearch />
-                <ButtonFilter />
-                <AddBtn variant='outlined'>Thêm khách hàng</AddBtn>
-            </Grid>
-            <Grid sx={{mt:5 }}>
-            <Table columns={columns} rows={rows} />
-            </Grid>
-        </Container>
+            field: 'fullName',
+            headerName: 'Full name',
+            description: 'This column has a value getter and is not sortable.',
+            sortable: false,
+            width: 160,
 
+        },
+    ];
+
+    const rows = [
+        { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
+        { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+        { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+        { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
+        { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+        { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
+        { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+        { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+        { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    ];
+    return (
+        <Grid container padding={5} >
+            <Grid xs={12} item padding={2} sx={{ backgroundColor: "#f5f5f5" }}>
+                <Grid className={classes.flex} xs>
+                    <Typography>Đơn hàng cần xử lý</Typography>
+                    <Autocomplete className={classes.selectOder} renderInput={(params) => <TextField  {...params} />} options={["30 ngày", "50 ngày"]} />
+                    <Button>Ẩn đơn hàng cần xử lý</Button>
+                </Grid>
+                <Grid className={classes.flex} xs>
+                    <Button variant='outlined' className={classes.boxItem}>
+                        <Typography variant='caption'>Chờ duyệt:0</Typography>
+                        <Typography>0</Typography>
+                    </Button>
+                    <Button variant='outlined' className={classes.boxItem}>
+                        <Typography variant='caption'>Chờ duyệt:1</Typography>
+                        <Typography>0</Typography>
+                    </Button>
+                    <Button variant='outlined' className={classes.boxItem}>
+                        <Typography variant='caption'>Chờ duyệt:0</Typography>
+                        <Typography>0</Typography>
+                    </Button>
+                    <Button variant='outlined' className={classes.boxItem}>
+                        <Typography variant='caption'>Chờ duyệt:1</Typography>
+                        <Typography>0</Typography>
+                    </Button>
+                    <Button variant='outlined' className={classes.boxItem}>
+                        <Typography variant='caption'>Chờ duyệt:0</Typography>
+                        <Typography>0</Typography>
+                    </Button>
+                    <Button variant='outlined' className={classes.boxItem}>
+                        <Typography variant='caption'>Chờ duyệt:1</Typography>
+                        <Typography>0</Typography>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid xs={12} item>
+                <DataGrid
+                    columns={columns}
+                    rows={rows}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
+                    checkboxSelection
+                />
+            </Grid>
+        </Grid>
     )
 }
 
