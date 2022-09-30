@@ -7,15 +7,15 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import { IconButton } from '@mui/material';
+import { Chip, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 interface Column {
     id: 'name' | 'code' | 'status' | 'create_at' | 'update_at';
     label: string;
     minWidth?: number;
-    align?: 'right';
-    format?: (value: number) => string;
+    align?: 'right' | 'left' | 'center';
+    format?: (value: number) => string | React.ReactElement;
 }
 
 const columns: readonly Column[] = [
@@ -26,8 +26,8 @@ const columns: readonly Column[] = [
         id: 'status',
         label: 'Status',
         minWidth: 170,
-        align: 'right',
-        format: (value: number) => value == 1 ? "Active" : "No",
+        align: 'center',
+        format: (value: number) => value == 1 ? <Chip size="small" color="success" label="Active" /> : <Chip size="medium" color="error" label="Disable" />,
     },
     {
         id: 'create_at',
@@ -97,7 +97,7 @@ export default function DataTable({ customerApi }: { customerApi: any }) {
 
     return (
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-            <TableContainer sx={{ maxHeight: 440 }}>
+            <TableContainer  sx={{ maxHeight: 480 }}>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
 
