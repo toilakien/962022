@@ -6,4 +6,4 @@ const TimeToLeave = () => {
   )
 }
 
-export default TimeToLeave
+export default TimeToLeave;

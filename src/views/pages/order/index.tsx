@@ -79,8 +79,8 @@ const Order = () => {
                     </Button>
                 </Stack>
             </Grid>
-            <Grid xs={12} item>
-                <DataGrid
+            <Grid xs={12} item >
+                <DataGrid className={classes.dataGrid}
                     columns={columns}
                     rows={rows}
                     pageSize={5}

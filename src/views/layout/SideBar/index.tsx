@@ -12,7 +12,7 @@ const SideBar = () => {
         height: "100vh",
         maxHeight: "100vh",
         backgroundColor: "#111",
-        m:0
+        m: 0
     });
     const SideBarContent = styled(Box)({
         display: "block",
