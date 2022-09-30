@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Container, Grid, styled } from '@mui/material'
 import InputSearch from '../../../components/inputSearch'
 import ButtonFilter from '../../../components/buttonFilter'
 import DataTable from './CustomerList'
-import { getAllList } from '../../../redux/slice/customer'
-import { dispatch, useSelector } from '../../../redux/store'
 import AddCustomer from './AddCustomer'
 import { customerApi } from '../../../fakeApi/apiCustomer'
 

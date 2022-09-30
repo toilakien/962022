@@ -7,7 +7,6 @@ import PersonIcon from "@mui/icons-material/Person";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 const SideBar = () => {
     const SideBarWrapper = styled(Grid)({
         height: "100vh",

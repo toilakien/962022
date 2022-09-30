@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import Table from '../../../components/table';
 import '../../../resource/css/table.css';
 export default function DataTable({ customerApi }: { customerApi: any }) {
@@ -64,6 +63,6 @@ export default function DataTable({ customerApi }: { customerApi: any }) {
     ];
 
     return (
-        <Table columns={columns}rows={rows} />
+        <Table columns={columns} rows={rows} />
     )
 }

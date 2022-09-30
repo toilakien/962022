@@ -3,6 +3,7 @@ import Customer from "../views/pages/customer";
 import Order from "../views/pages/order";
 import OverView from "../views/pages/overview";
 import Profile from "../views/pages/profile";
+import TimeToLeave from "../views/pages/TimeToLeave";
 
 
 const MainRoute =
@@ -14,6 +15,7 @@ const MainRoute =
         { path: "/Person", element: <Customer /> },
         { path: "/Inventory", element: <Order /> },
         { path: "/profile", element: <Profile /> },
+        { path: "/TimeToLeave", element: <TimeToLeave /> },
     ]
 }
 export default MainRoute;
