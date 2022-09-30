@@ -97,7 +97,7 @@ export default function DataTable({ customerApi }: { customerApi: any }) {
 
     return (
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-            <TableContainer  sx={{ maxHeight: 480 }}>
+            <TableContainer sx={{ maxHeight: 480 }}>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
 
