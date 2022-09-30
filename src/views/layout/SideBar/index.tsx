@@ -10,11 +10,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 const SideBar = () => {
     const SideBarWrapper = styled(Grid)({
-        width: "250px",
-        maxWidth: "250px",
         height: "100vh",
         maxHeight: "100vh",
         backgroundColor: "#111",
+        m:0
     });
     const SideBarContent = styled(Box)({
         display: "block",

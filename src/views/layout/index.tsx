@@ -1,3 +1,4 @@
+import { Grid } from '@mui/material'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
@@ -5,16 +6,16 @@ import SideBar from './SideBar'
 
 const Layout = () => {
     return (
-        <div className="app">
+        <Grid container flexWrap={'nowrap'} xs={12}>
 
-            <div>
+            <Grid xs={2}>
                 <SideBar />
-            </div>
-            <div>
+            </Grid>
+            <Grid xs={10}>
                 <Header />
-                {<Outlet/>}
-            </div>
-        </div>
+                {<Outlet />}
+            </Grid>
+        </Grid>
     )
 }
 

@@ -14,36 +14,22 @@ export const useStyles = makeStyles({
         paddingRight: 2,
         color: "#111"
     },
-    flex: {
-        display: "flex",
-        alignItems: "center",
-        width: "auto",
-        // flexWrap: "nowrap",
-        justifyContent: "space-between"
-    },
+
     boxItem: {
-        width: "20%",
+        width: "calc(100% / 6)",
         height: "80px",
         cursor: "pointer",
-        display: "flex",
         flexDirection: "column",
-        color: "#333",
-
     },
     selectOder: {
         width: "200px",
         height: "50px",
-        position: "absolute",
-        left: "33%",
         p: 0, m: 0,
         '& input': {
-            position: "relative",
             height: "20px"
         },
         '& fieldset': {
             height: "50px",
-            opacity: 0.6
-
         },
         '& p': {
             fontSize: "0.8rem"
@@ -53,7 +39,6 @@ export const useStyles = makeStyles({
         }, '& button': {
             height: "10px",
             fontSize: "1rem"
-
         }
     }
 })

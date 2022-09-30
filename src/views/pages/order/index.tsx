@@ -2,6 +2,7 @@ import React from 'react';
 import { Autocomplete, Button, Grid, TextField, Typography } from '@mui/material'
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { useStyles } from '../../../styles/globalSlyles'
+import { Stack } from '@mui/system';
 
 
 const Order = () => {
@@ -38,14 +39,20 @@ const Order = () => {
         { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
     ];
     return (
-        <Grid container padding={5} >
-            <Grid xs={12} item padding={2} sx={{ backgroundColor: "#f5f5f5" }}>
-                <Grid className={classes.flex} xs>
-                    <Typography>Đơn hàng cần xử lý</Typography>
-                    <Autocomplete className={classes.selectOder} renderInput={(params) => <TextField  {...params} />} options={["30 ngày", "50 ngày"]} />
-                    <Button>Ẩn đơn hàng cần xử lý</Button>
-                </Grid>
-                <Grid className={classes.flex} xs>
+        <Grid container padding={5} sx={{ height: "100vh" }}>
+            <Grid xs={12} item padding={2} sx={{ backgroundColor: "#f5f5f5", height: "230px", position: "relative" }}>
+                <Stack direction="row" >
+                    <Grid container alignItems={'center'} >
+                        <p style={{ fontSize: "1rem" }}>Đơn hàng cần xử lý</p>
+                        <Autocomplete
+                            className={classes.selectOder}
+                            renderInput={(params) => <TextField  {...params} />}
+                            options={["30 ngày", "50 ngày"]}
+                        />
+                    </Grid>
+                    <Button sx={{ width: "300px", fontSize: "0.8rem" }}>Ẩn đơn hàng cần xử lý</Button>
+                </Stack>
+                <Stack direction={'row'} >
                     <Button variant='outlined' className={classes.boxItem}>
                         <Typography variant='caption'>Chờ duyệt:0</Typography>
                         <Typography>0</Typography>
@@ -70,7 +77,7 @@ const Order = () => {
                         <Typography variant='caption'>Chờ duyệt:1</Typography>
                         <Typography>0</Typography>
                     </Button>
-                </Grid>
+                </Stack>
             </Grid>
             <Grid xs={12} item>
                 <DataGrid

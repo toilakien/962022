@@ -9,17 +9,8 @@ import { Link } from "react-router-dom";
 import { useStyles } from "../../../styles/globalSlyles";
 
 const Header = () => {
-  const HeaderWrapper = styled(Grid)({
-    width: "calc(1536px - 250px )",
-    // height:"80px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderBottom: "1px solid #111"
-  });
-  const MenuWrapper = styled(Grid)({
-    display: "flex",
-  });
+  
+  
   const ListItem = styled(Box)({
     height: "50px",
     display: "flex",
@@ -31,9 +22,11 @@ const Header = () => {
   });
   const classes = useStyles();
   return (
-    <HeaderWrapper container>
-      <Typography variant="h6" sx={{ ml: 2 }}>Tổng quan</Typography>
-      <MenuWrapper>
+    <Grid container sx={{borderBottom:"1px solid #ddd"}}>
+      <Grid xs={2}>
+        <Typography variant="h6" sx={{ ml: 2 }}>Tổng quan</Typography>
+      </Grid>
+      <Grid container justifyContent={"flex-end"} xs={10}>
         <ListItem>
           <AttachMoneyIcon sx={{ color: "#ddd" }} />
           <Typography className={classes.typography}>Vay vốn kinh doanh </Typography>
@@ -53,8 +46,8 @@ const Header = () => {
             <KeyboardArrowDownIcon />
           </ListItem>
         </Link>
-      </MenuWrapper>
-    </HeaderWrapper>
+      </Grid >
+    </Grid>
   );
 };
 
