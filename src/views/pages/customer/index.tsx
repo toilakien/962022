@@ -21,7 +21,7 @@ const Customer = () => {
   //   getList();
   // }, [])
   return (
-    <Grid  sx={{ mt: 5, backgroundColor: "#eceff1", p: 5 }}>
+    <Grid  sx={{ backgroundColor: "#f5f5f5", p: 5 }}>
       <Grid item sx={{ display: "flex" }}>
         <InputSearch />
         <ButtonFilter />

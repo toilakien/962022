@@ -14,7 +14,7 @@ const MainRoute =
         { path: "/Home", element: <OverView /> },
         { path: "/Person", element: <Customer /> },
         { path: "/Inventory", element: <Order /> },
-        { path: "/profile", element: <Profile /> },
+        { path: "/Profile", element: <Profile /> },
         { path: "/TimeToLeave", element: <TimeToLeave /> },
     ]
 }

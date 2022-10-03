@@ -18,7 +18,6 @@ interface Column {
     align?: 'right' | 'left' | 'center';
     format?: (value: number) => string | React.ReactElement;
 }
-
 const columns: readonly Column[] = [
 
     { id: 'name', label: 'Name', minWidth: 170 },
@@ -53,7 +52,6 @@ interface Data {
     create_at: string;
     update_at: string;
 }
-
 function createData(
     name: string,
     code: string,
@@ -64,7 +62,6 @@ function createData(
 
     return { name, code, status, create_at, update_at };
 }
-
 const rows = [
     createData('India', 'IN', 1, "7/2/2012", "7/2/2012"),
     createData('China', 'CN', 0, "7/2/2012", "7/2/2012"),
@@ -82,7 +79,6 @@ const rows = [
     createData('Nigeria', 'NG', 0, "7/2/2012", "7/2/2012"),
     createData('Brazil', 'BR', 0, "7/2/2012", "7/2/2012"),
 ];
-
 export default function DataTable({ customerApi }: { customerApi: any }) {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -102,7 +98,7 @@ export default function DataTable({ customerApi }: { customerApi: any }) {
 
     return (
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-            <TableContainer sx={{ maxHeight: 480 }}>
+            <TableContainer sx={{ maxHeight: 520 }}>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
                         <TableRow>
