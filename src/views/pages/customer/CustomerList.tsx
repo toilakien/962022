@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import { Chip, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import FormDialog from './FormDialog';
 interface Column {
     id: 'name' | 'code' | 'status' | 'create_at' | 'update_at';
     label: string;
@@ -27,7 +28,7 @@ const columns: readonly Column[] = [
         label: 'Status',
         minWidth: 170,
         align: 'center',
-        format: (value: number) => value == 1 ? <Chip size="small" color="success" label="Active" /> : <Chip size="medium" color="error" label="Disable" />,
+        format: (value: number) => value == 1 ? <Chip sx={{ '& span': { fontSize: "0.8rem" } }} size="small" color="success" label="Active" /> : <Chip sx={{ '& span': { fontSize: "0.8rem" } }} size="small" color="error" label="Disable" />,
     },
     {
         id: 'create_at',
@@ -85,22 +86,26 @@ const rows = [
 export default function DataTable({ customerApi }: { customerApi: any }) {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
     const handleChangePage = (event: unknown, newPage: number) => {
         setPage(newPage);
     };
-
     const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRowsPerPage(+event.target.value);
         setPage(0);
     };
+
+    //open form
+    const [open, setOpen] = React.useState<boolean>(false);
+    const handleOpenForm = () => {
+        setOpen(true);
+    }
+    console.log(open);
 
     return (
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
             <TableContainer sx={{ maxHeight: 480 }}>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
-
                         <TableRow>
                             <TableCell>STT</TableCell>
                             {columns.map((column) => (
@@ -111,9 +116,8 @@ export default function DataTable({ customerApi }: { customerApi: any }) {
                                 >
                                     {column.label}
                                 </TableCell>
-
                             ))}
-                            <TableCell>Tools</TableCell>
+                            <TableCell align='center'>Tools</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -133,20 +137,19 @@ export default function DataTable({ customerApi }: { customerApi: any }) {
                                                 </TableCell>
                                             );
                                         })}
-                                        <TableCell>
-                                            <IconButton aria-label="delete">
-                                                <DeleteIcon />
+                                        <TableCell align='center'>
+                                            <IconButton aria-label="edit">
+                                                <EditIcon sx={{ color: "green" }} />
                                             </IconButton>
-
-                                            <IconButton aria-label="delete">
-                                                <EditIcon />
+                                            <IconButton onClick={handleOpenForm} aria-label="delete">
+                                                <DeleteIcon sx={{ color: "red" }} />
                                             </IconButton>
                                         </TableCell>
-
                                     </TableRow>
                                 );
                             })}
                     </TableBody>
+                    <FormDialog open={open} setOpen={setOpen} />
                 </Table>
             </TableContainer>
             <TablePagination

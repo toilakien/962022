@@ -21,18 +21,18 @@ const Customer = () => {
   //   getList();
   // }, [])
   return (
-    <Container sx={{ mt: 5, backgroundColor: "#eceff1", p: 5 }}>
-      <Grid sx={{ display: "flex" }}>
+    <Grid  sx={{ mt: 5, backgroundColor: "#eceff1", p: 5 }}>
+      <Grid item sx={{ display: "flex" }}>
         <InputSearch />
         <ButtonFilter />
         <AddBtn onClick={() => setOpen(!open)} variant='outlined'>Thêm khách hàng</AddBtn>
       </Grid>
-      <Grid sx={{ mt: 5 }}>
+      <Grid item sx={{ mt: 5 }}>
         <DataTable customerApi={customerApi} />
       </Grid>
       {/* dialog */}
       <AddCustomer open={open} setOpen={setOpen} />
-    </Container>
+    </Grid>
   )
 }
 

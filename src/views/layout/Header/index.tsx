@@ -14,16 +14,16 @@ const Header = () => {
 
   return (
     <Grid container alignItems={"center"} sx={{ borderBottom: "1px solid #ddd" }}>
-      <Grid xs={2}>
+      <Grid container item xs={2}>
         <Typography variant="h6" sx={{ ml: 2 }}>Tổng quan</Typography>
       </Grid>
-      <Grid container justifyContent={"flex-end"} xs={10}>
-        <Tabs>
+      <Grid item container justifyContent={"flex-end"} xs={10}>
+        {/* <Tabs >
           <Tab label="Vay vốn kinh doanh" iconPosition="start" icon={<AttachMoneyIcon />} />
           <Tab label="Trợ giúp" iconPosition="start" icon={<QuestionMarkIcon sx={{ color: "darkblue" }} />} />
           <Tab label="Góp ý " iconPosition="start" icon={<FavoriteIcon sx={{ color: "red" }} />} />
           <Tab onClick={handleClick} label="Kiên Lê" iconPosition="end" icon={<KeyboardArrowDownIcon sx={{ color: "#ddd" }} />} />
-        </Tabs>
+        </Tabs> */}
 
       </Grid >
     </Grid>
