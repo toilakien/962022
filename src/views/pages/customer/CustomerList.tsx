@@ -99,7 +99,6 @@ export default function DataTable({ customerApi }: { customerApi: any }) {
     const handleOpenForm = () => {
         setOpen(true);
     }
-    console.log(open);
 
     return (
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>

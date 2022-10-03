@@ -5,6 +5,7 @@ import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useNavigate } from "react-router-dom";
+import BasicBreadcrumbs from "../../../components/Breadcrumbs";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -14,10 +15,10 @@ const Header = () => {
 
   return (
     <Grid container alignItems={"center"} sx={{ borderBottom: "1px solid #ddd" }}>
-      <Grid container item xs={2}>
-        <Typography variant="h6" sx={{ ml: 2 }}>Tổng quan</Typography>
+      <Grid container item xs={4}>
+        <BasicBreadcrumbs />
       </Grid>
-      <Grid item container justifyContent={"flex-end"} xs={10}>
+      <Grid item container justifyContent={"flex-end"} xs={8}>
         {/* <Tabs >
           <Tab label="Vay vốn kinh doanh" iconPosition="start" icon={<AttachMoneyIcon />} />
           <Tab label="Trợ giúp" iconPosition="start" icon={<QuestionMarkIcon sx={{ color: "darkblue" }} />} />

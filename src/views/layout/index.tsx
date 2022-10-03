@@ -7,12 +7,12 @@ import SideBar from './SideBar'
 const Layout = () => {
     return (
         <Grid container flexWrap={'nowrap'}>
-
             <Grid item xs={2}>
                 <SideBar />
             </Grid>
             <Grid item xs={10}>
                 <Header />
+                
                 {<Outlet />}
             </Grid>
         </Grid>
