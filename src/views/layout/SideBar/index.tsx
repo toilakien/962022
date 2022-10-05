@@ -5,7 +5,6 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import TimeToLeaveIcon from "@mui/icons-material/TimeToLeave";
 import PersonIcon from "@mui/icons-material/Person";
 import { Link } from "react-router-dom";
-import { useStyles } from "../../../styles/globalSlyles";
 interface TypoArrType {
     title: string,
     type: string,
@@ -34,7 +33,6 @@ const SideBar = ({ status, setStatus }: { status: boolean, setStatus: any }) => 
             element: <PersonIcon />,
         },
     ];
-    const classes = useStyles();
     return (
         <Grid>
             <Grid>

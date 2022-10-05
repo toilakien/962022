@@ -1,7 +1,6 @@
 import { Grid } from '@mui/material'
 import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
-import { useStyles } from '../../styles/globalSlyles'
 import Header from './Header'
 import SideBar from './SideBar'
 
