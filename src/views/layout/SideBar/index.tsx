@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, IconButton, Typography } from "@mui/material";
 import Logo from "../../../components/Logo";
 import HomeIcon from "@mui/icons-material/Home";
 import InventoryIcon from "@mui/icons-material/Inventory";
@@ -6,13 +6,14 @@ import TimeToLeaveIcon from "@mui/icons-material/TimeToLeave";
 import PersonIcon from "@mui/icons-material/Person";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import { useStyles } from "../../../styles/globalSlyles";
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 interface TypoArrType {
     title: string,
     type: string,
     element: JSX.Element;
 }
-const SideBar = () => {
-    const [status, setStatus] = useState<boolean>(false);
+const SideBar = ({ status, setStatus }: { status: boolean, setStatus: any }) => {
     const TypoArr: TypoArrType[] = [
         {
             title: "Tổng quan",
@@ -35,6 +36,7 @@ const SideBar = () => {
             element: <PersonIcon />,
         },
     ];
+    const classes = useStyles();
     return (
         <Grid>
             <Grid>
@@ -46,7 +48,7 @@ const SideBar = () => {
                         <Link style={{ textDecoration: "none" }} to={e.type}>
                             <Grid container alignItems='center' justifyContent='flex-start' key={index} sx={{ p: 2 }}>
                                 <Typography sx={{ color: "#fff" }}>{e.element}</Typography>
-                                {!status ? <Typography sx={{ ml: 3, color: "#fff" }} variant="inherit">{e.title}</Typography> : ''}
+                                {status === false ? <Typography sx={{ ml: 3, color: "#fff" }} variant="inherit">{e.title}</Typography> : ""}
                             </Grid>
                         </Link>
                     )

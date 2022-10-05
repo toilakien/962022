@@ -47,5 +47,10 @@ export const useStyles = makeStyles({
     hide: {
         display: "none"
     },
-    show: { display: "block" }
+    show: {
+        display: "block"
+    },
+    width100: {
+        width: "100px"
+    }
 })
