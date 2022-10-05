@@ -1,13 +1,11 @@
-import { Grid, IconButton, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import Logo from "../../../components/Logo";
 import HomeIcon from "@mui/icons-material/Home";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import TimeToLeaveIcon from "@mui/icons-material/TimeToLeave";
 import PersonIcon from "@mui/icons-material/Person";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
 import { useStyles } from "../../../styles/globalSlyles";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 interface TypoArrType {
     title: string,
     type: string,
@@ -25,7 +23,7 @@ const SideBar = ({ status, setStatus }: { status: boolean, setStatus: any }) => 
             type: "Inventory",
             element: <InventoryIcon />,
         },
-        {
+        {   
             title: "Vận chuyển",
             type: "TimeToLeave",
             element: <TimeToLeaveIcon />,
