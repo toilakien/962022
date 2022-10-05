@@ -11,15 +11,9 @@ import { Chip, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import FormDialog from './FormDialog';
-interface Column {
-    id: 'name' | 'code' | 'status' | 'create_at' | 'update_at';
-    label: string;
-    minWidth?: number;
-    align?: 'right' | 'left' | 'center';
-    format?: (value: number) => string | React.ReactElement;
-}
-const columns: readonly Column[] = [
+import { Column, Data } from '../../../types/customer';
 
+const columns: readonly Column[] = [
     { id: 'name', label: 'Name', minWidth: 170 },
     { id: 'code', label: 'Code', minWidth: 100 },
     {
@@ -27,7 +21,7 @@ const columns: readonly Column[] = [
         label: 'Status',
         minWidth: 170,
         align: 'center',
-        format: (value: number) => value == 1 ? <Chip sx={{ '& span': { fontSize: "0.8rem" } }} size="small" color="success" label="Active" /> : <Chip sx={{ '& span': { fontSize: "0.8rem" } }} size="small" color="error" label="Disable" />,
+        format: (value: number) => value === 1 ? <Chip sx={{ '& span': { fontSize: "0.8rem" } }} size="small" color="success" label="Active" /> : <Chip sx={{ '& span': { fontSize: "0.8rem" } }} size="small" color="error" label="Disable" />,
     },
     {
         id: 'create_at',
@@ -45,13 +39,7 @@ const columns: readonly Column[] = [
     },
 ];
 
-interface Data {
-    name: string;
-    code: string;
-    status: number;
-    create_at: string;
-    update_at: string;
-}
+
 function createData(
     name: string,
     code: string,

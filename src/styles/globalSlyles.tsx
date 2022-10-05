@@ -41,7 +41,11 @@ export const useStyles = makeStyles({
             fontSize: "1rem"
         }
     },
-    dataGrid:{
-        
-    }
+    dataGrid: {
+
+    },
+    hide: {
+        display: "none"
+    },
+    show: { display: "block" }
 })
