@@ -3,6 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import TabProfile from './tabs/TabProfile';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -52,7 +53,7 @@ export default function TabAcount() {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                Profile
+                <TabProfile/>
             </TabPanel>
             <TabPanel value={value} index={1}>
                 Personal Details
